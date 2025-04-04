@@ -7,8 +7,8 @@
 
 # Site Settings
 title                    : "Chen Guanxv"
-description              : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. "
-repository               : "RayeRen/acad-homepage.github.io"
+description              : "Trustworthy AI"
+repository               : "chenqaq123/chenqaq123.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -23,7 +23,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Chen Guanxv"
   avatar           : "images/avatar.png"
-  bio              : "Fudan university"
+  bio              : "PhD student from Fudan University "
   location         : "Shanghai, China"
   employer         :
   pubmed           : 
