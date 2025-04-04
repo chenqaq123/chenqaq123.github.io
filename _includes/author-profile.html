@@ -119,7 +119,13 @@
         <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"><i class="fab fa-fw fa-wikipedia-w" aria-hidden="true"></i> Wikipedia</a></li>
       {% endif %}
       {% if author.gitee %}
-        <li><a href="{{ author.gitee }}"><i class="fab fa-fw fa-git-alt" aria-hidden="true"></i> Gitee</a></li>
+        <li><a href="{{ author.gitee }}"><i class="fa fa-git" aria-hidden="true"></i> Gitee</a></li>
+      {% endif %}
+      {% if author.zhihu %}
+        <li><a href="{{ author.zhihu }}"><i class="fa fa-book" aria-hidden="true"></i> Zhihu</a></li>
+      {% endif %}
+      {% if author.bilibili %}
+        <li><a href="{{ author.bilibili }}"><i class="fa fa-video-camera" aria-hidden="true"></i> Bilibili</a></li>
       {% endif %}
     </ul>
       <div class="author__urls_sm">
