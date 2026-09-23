@@ -19,15 +19,32 @@ jobs:
         python-version: '3.11'
     - name: Run
       run: |
+        # TEMP DIAGNOSTIC: reports each stage as a check-run annotation, remove once diagnosed
+        fail() {
+          echo "::error title=$1::$2"
+          exit 1
+        }
+        report() {
+          tail -c 700 "$1" | sed 's/%/%25/g' | tr '\n' '~'
+        }
         cd ./google_scholar_crawler
-        pip install -r requirements.txt
-        python main.py
+        if [ -z "${GOOGLE_SCHOLAR_ID}" ]; then
+          fail "diagnose-secret" "GOOGLE_SCHOLAR_ID is empty in this job"
+        else
+          echo "::notice title=diagnose-secret::GOOGLE_SCHOLAR_ID is set (length ${#GOOGLE_SCHOLAR_ID})"
+        fi
+        pip install -r requirements.txt > /tmp/pip.log 2>&1 || fail "diagnose-pip" "$(report /tmp/pip.log)"
+        echo "::notice title=diagnose-pip::ok"
+        python main.py > /tmp/crawl.log 2>&1 || fail "diagnose-crawl" "$(report /tmp/crawl.log)"
+        echo "::notice title=diagnose-crawl::ok"
         cd ./results
-        git init
+        git init -q
         git config --local user.name "${GITHUB_ACTOR}"
         export remote_repo="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
         git add *.json
-        git commit -m "Updated Citation Data"
-        git push "${remote_repo}" HEAD:google-scholar-stats --force
+        git commit -m "Updated Citation Data" > /tmp/commit.log 2>&1 || fail "diagnose-commit" "$(report /tmp/commit.log)"
+        echo "::notice title=diagnose-commit::ok"
+        git push "${remote_repo}" HEAD:google-scholar-stats --force > /tmp/push.log 2>&1 || fail "diagnose-push" "$(sed -E 's#//[^@/]*@#//REDACTED@#g' /tmp/push.log | tail -c 700 | sed 's/%/%25/g' | tr '\n' '~')"
+        echo "::notice title=diagnose-push::ok"
       env: 
         GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
