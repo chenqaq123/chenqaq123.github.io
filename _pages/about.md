@@ -22,12 +22,32 @@ I am a PhD student at Fudan University. My research interests include AI securit
 My publications have received in total <a href='https://scholar.google.com/citations?user=AIxm9uAAAAAJ'>google scholar citations <strong><span id='total_cit'>11</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=AIxm9uAAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).
 
 
+# 📖 Educations
+
+<div class="edu-entry">
+  <div class="edu-header">
+    <span class="edu-school"><strong>Fudan University</strong>, College of Computer Science and Artificial Intelligence</span>
+    <span class="edu-date">Sep 2025 – Present</span>
+  </div>
+  <div class="edu-degree">Ph.D. in Computer Science, Direct PhD Program for Outstanding Undergraduates</div>
+  <div class="edu-note">Research focus: model interpretability and AI safety</div>
+</div>
+
+<div class="edu-entry">
+  <div class="edu-header">
+    <span class="edu-school"><strong>Fudan University</strong>, School of Software</span>
+    <span class="edu-date">Sep 2021 – Jun 2025</span>
+  </div>
+  <div class="edu-degree">B.Eng. in Software Engineering</div>
+  <div class="edu-note">GPA: 3.78 / 4.00 · Major rank: 2 / 105</div>
+</div>
+
 # 🔥 News
 - To be updated.
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2024</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2024</div><img src='images/safe_text2image_fig1.png' alt="Figure 1 of Safe Text-to-Image Generation: ES sanitizes prompt embeddings to ensure safe image generation while also identifying inappropriate tokens" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Safe Text-to-Image Generation: Simply Sanitize the Prompt Embedding](https://arxiv.org/abs/2411.10329)
@@ -40,10 +60,11 @@ Huming Qiu, **Guanxu Chen**, Mi Zhang, Xiaohan Zhang, Xiaoyu You, Min Yang
 </div>
 
 # 🎖 Honors and Awards
-- To be updated.
-
-# 📖 Educations
-- To be updated.
+- Outstanding Graduate of Shanghai Municipality
+- Undergraduate Honors Certificate, Fudan University (top 10% of undergraduates)
+- First-Class Scholarship, Fudan University (× 2)
+- China International College Students' Innovation Competition · Software Supply Chain Vulnerability Governance — Gold Award, Shanghai Division / Bronze Award, National Finals
+- 6th CCF Open Source Innovation Competition · LLM-based Intelligent Consulting Assistant — First Prize, Open-Source Task Challenge Track
 
 # 💬 Invited Talks
 - To be updated.

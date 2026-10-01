@@ -1,6 +1,29 @@
 {% if page.author_profile or layout.author_profile or page.sidebar %}
   <div class="sidebar sticky">
   {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
+
+  <div class="visitor-stats">
+    <script defer src="https://events.vercount.one/js"></script>
+    <p class="visitor-stats-line"><i class="fas fa-fw fa-eye" aria-hidden="true"></i> Visitors: <span id="vercount_value_site_uv">–</span></p>
+    <p class="visitor-stats-line"><i class="fas fa-fw fa-chart-line" aria-hidden="true"></i> Pageviews: <span id="vercount_value_site_pv">–</span></p>
+    <script>
+      (function () {
+        var tries = 0;
+        var timer = setInterval(function () {
+          var uv = document.getElementById("vercount_value_site_uv");
+          var pv = document.getElementById("vercount_value_site_pv");
+          if (!uv || !pv) return;
+          var done = true;
+          [uv, pv].forEach(function (el) {
+            var raw = el.textContent.trim();
+            if (/^\d+$/.test(raw)) { el.textContent = Number(raw).toLocaleString("en-US"); }
+            else if (raw === "" || raw === "–") { done = false; }
+          });
+          if (done || ++tries > 20) clearInterval(timer);
+        }, 300);
+      })();
+    </script>
+  </div>
   {% if page.sidebar %}
     {% for s in page.sidebar %}
       {% if s.image %}
