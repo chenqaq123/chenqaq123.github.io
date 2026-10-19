@@ -59,6 +59,9 @@ Huming Qiu, **Guanxu Chen**, Mi Zhang, Xiaohan Zhang, Xiaoyu You, Min Yang
 </div>
 </div>
 
+# 🚀 Projects
+- To be updated.
+
 # 🎖 Honors and Awards
 - Outstanding Graduate of Shanghai Municipality
 - Undergraduate Honors Certificate, Fudan University (top 10% of undergraduates)
