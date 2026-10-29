@@ -24,22 +24,31 @@ My publications have received in total <a href='https://scholar.google.com/citat
 
 # 📖 Educations
 
-<div class="edu-entry">
-  <div class="edu-header">
-    <span class="edu-school"><strong>Fudan University</strong>, College of Computer Science and Artificial Intelligence</span>
-    <span class="edu-date">Sep 2025 – Present</span>
+<div class="edu-timeline">
+  <div class="edu-entry">
+    <div class="edu-date">Sep 2025 – Present</div>
+    <div class="edu-content">
+      <div class="edu-header">
+        <div class="edu-school">Fudan University</div>
+        <div class="edu-affiliation"><span class="edu-degree">Ph.D. in Computer Science</span><span class="edu-separator">·</span><span class="edu-program">Zhuobo Program</span><span class="edu-separator">·</span>College of Computer Science and Artificial Intelligence</div>
+      </div>
+      <div class="edu-note"><span class="edu-note-label">Research focus:</span> model interpretability and AI safety</div>
+    </div>
   </div>
-  <div class="edu-degree">Ph.D. in Computer Science, Direct PhD Program for Outstanding Undergraduates</div>
-  <div class="edu-note">Research focus: model interpretability and AI safety</div>
-</div>
 
-<div class="edu-entry">
-  <div class="edu-header">
-    <span class="edu-school"><strong>Fudan University</strong>, School of Software</span>
-    <span class="edu-date">Sep 2021 – Jun 2025</span>
+  <div class="edu-entry">
+    <div class="edu-date">Sep 2021 – Jun 2025</div>
+    <div class="edu-content">
+      <div class="edu-header">
+        <div class="edu-school">Fudan University</div>
+        <div class="edu-affiliation">School of Software · B.Eng. in Software Engineering</div>
+      </div>
+      <div class="edu-facts">
+        <span class="edu-fact"><span class="edu-fact-label">GPA</span><span class="edu-fact-value">3.78 / 4.00</span></span>
+        <span class="edu-fact"><span class="edu-fact-label">Major rank</span><span class="edu-fact-value">2 / 105</span></span>
+      </div>
+    </div>
   </div>
-  <div class="edu-degree">B.Eng. in Software Engineering</div>
-  <div class="edu-note">GPA: 3.78 / 4.00 · Major rank: 2 / 105</div>
 </div>
 
 # 🔥 News
@@ -47,16 +56,17 @@ My publications have received in total <a href='https://scholar.google.com/citat
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2024</div><img src='images/safe_text2image_fig1.png' alt="Figure 1 of Safe Text-to-Image Generation: ES sanitizes prompt embeddings to ensure safe image generation while also identifying inappropriate tokens" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[Safe Text-to-Image Generation: Simply Sanitize the Prompt Embedding](https://arxiv.org/abs/2411.10329)
-
-Huming Qiu, **Guanxu Chen**, Mi Zhang, Xiaohan Zhang, Xiaoyu You, Min Yang
-
-[**Paper**](https://arxiv.org/abs/2411.10329) <strong><span class='show_paper_citations' data='AIxm9uAAAAAJ:9yKSN-GCB0IC'></span></strong>
-- arXiv preprint arXiv:2411.10329, 2024.
-</div>
+<div class="publication-card">
+  <div class="publication-badge">arXiv 2024</div>
+  <a class="publication-title" href="https://arxiv.org/abs/2411.10329">Safe Text-to-Image Generation: Simply Sanitize the Prompt Embedding</a>
+  <div class="publication-authors">Huming Qiu, <strong>Guanxu Chen</strong>, Mi Zhang, Xiaohan Zhang, Xiaoyu You, Min Yang</div>
+  <div class="publication-venue">arXiv preprint arXiv:2411.10329, 2024</div>
+  <div class="publication-actions">
+    <a class="publication-action" href="https://arxiv.org/abs/2411.10329"><i class="fas fa-globe" aria-hidden="true"></i>Website</a>
+    <a class="publication-action" href="https://arxiv.org/pdf/2411.10329"><i class="fas fa-file-pdf" aria-hidden="true"></i>Paper</a>
+    <!-- Add a Hugging Face link here when available. -->
+    <span class="publication-citations"><i class="fas fa-quote-right" aria-hidden="true"></i>Citations: <span class="show_paper_citations" data="AIxm9uAAAAAJ:9yKSN-GCB0IC"></span></span>
+  </div>
 </div>
 
 # 🚀 Projects
