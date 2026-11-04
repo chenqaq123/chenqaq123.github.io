@@ -42,125 +42,76 @@
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
 
-.publication-card {
-    position: relative;
-    margin: 1.6em 0 1.25em;
-    padding: 1.15rem 1.35rem 1rem;
-    border: 1px solid $border-color;
-    border-radius: 8px;
-    background: $body-color;
-    transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+.pub-list {
+    margin-block-start: 0;
+}
 
-    &:hover {
-        border-color: $light-gray;
-        box-shadow: 0 4px 14px rgba(#000, .06);
-        transform: translateY(-2px);
-    }
+.pub-item {
+    padding: .35em 0;
 
-    .publication-badge {
-        position: absolute;
-        top: 0;
-        left: 1.25rem;
-        padding: .3em .65em;
-        border-radius: 3px;
-        background: $text-color;
-        color: #fff;
-        font-size: .76em;
-        font-weight: 600;
-        line-height: 1.4;
-        transform: translateY(-50%);
-    }
-
-    .publication-title {
-        display: block;
+    .pub-title {
         color: $text-color;
-        font-size: 1.06em;
+        font-size: 1.04em;
         font-weight: 700;
         line-height: 1.45;
-        text-decoration: none;
 
-        &:hover {
-            text-decoration: underline;
+        a {
+            color: $text-color;
+            text-decoration: none;
+
+            &:hover {
+                color: $link-color;
+                text-decoration: underline;
+            }
         }
     }
 
-    .publication-authors {
-        margin-top: .45em;
+    .pub-tag {
+        display: inline-block;
+        margin-left: .5em;
+        padding: .08em .5em;
+        border-radius: 3px;
+        background: $code-background-color;
+        color: $gray;
+        font-size: .74em;
+        font-weight: 600;
+        line-height: 1.5;
+        vertical-align: .12em;
+        white-space: nowrap;
+    }
+
+    .pub-authors {
+        margin-top: .35em;
         color: $text-color;
         font-size: .94em;
         line-height: 1.55;
     }
 
-    .publication-venue {
-        margin-top: .15em;
+    .pub-links {
+        margin-top: .45em;
         color: $gray;
         font-size: .88em;
-        line-height: 1.5;
-    }
+        line-height: 1.6;
 
-    .publication-actions {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: .55em;
-        margin-top: .8em;
-    }
-
-    .publication-action {
-        display: inline-flex;
-        align-items: center;
-        gap: .4em;
-        padding: .32em .65em;
-        border: 1px solid $border-color;
-        border-radius: 4px;
-        color: $text-color;
-        font-size: .82em;
-        font-weight: 600;
-        line-height: 1.4;
-        text-decoration: none;
-        transition: background-color .18s ease, border-color .18s ease;
-
-        &:hover {
-            border-color: $light-gray;
-            background: $code-background-color;
-            text-decoration: none;
-        }
-    }
-
-    .publication-citations {
-        margin-left: auto;
-        color: $gray;
-        font-size: .84em;
-
-        i {
-            margin-right: .4em;
-            color: $light-gray;
-        }
-
-        .show_paper_citations {
-            color: $text-color;
+        a {
+            color: $link-color;
             font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+
+            &:hover {
+                color: $link-color-hover;
+                text-decoration: underline;
+            }
         }
-    }
 
-    @media (max-width: $small) {
-        padding: 1.2rem 1rem 1rem;
+        .pub-citations {
+            margin-left: .5em;
 
-        .publication-badge {
-            left: 1rem;
-        }
-
-        .publication-citations {
-            width: 100%;
-            margin-left: 0;
-        }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        transition: none;
-
-        &:hover {
-            transform: none;
+            .show_paper_citations {
+                color: $text-color;
+                font-weight: 600;
+            }
         }
     }
 }
@@ -186,173 +137,10 @@ h1:before, .anchor:before {
     font-size: .8em;
 }
 
-.edu-timeline {
-    --edu-date-width: 9.25rem;
-    --edu-gutter: 2rem;
-    margin-top: .75em;
-}
-
-.edu-entry {
-    position: relative;
-    display: grid;
-    grid-template-columns: var(--edu-date-width) minmax(0, 1fr);
-    column-gap: var(--edu-gutter);
-    padding: 1.35rem 0;
-
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: calc(var(--edu-date-width) + 1rem);
-        width: 1px;
-        background: $border-color;
-    }
-
-    &:after {
-        content: '';
-        position: absolute;
-        top: 1.7rem;
-        left: calc(var(--edu-date-width) + 1rem);
-        width: 6px;
-        height: 6px;
-        border: 2px solid $info-color;
-        border-radius: 50%;
-        background: $body-color;
-        transform: translate(-50%, -50%);
-    }
-
-    &:first-child {
-        &:before {
-            top: 1.7rem;
-        }
-
-        &:after {
-            background: $info-color;
-        }
-    }
-
-    &:last-child {
-        padding-bottom: .25rem;
-
-        &:before {
-            bottom: auto;
-            height: 1.7rem;
-        }
-    }
-
-    .edu-date {
-        grid-column: 1;
-        padding-top: .15em;
-        color: $info-color;
-        font-size: .82em;
-        font-weight: 600;
-        line-height: 1.5;
-        white-space: nowrap;
-    }
-
-    .edu-content {
-        grid-column: 2;
-        min-width: 0;
-    }
-
-    .edu-school {
-        color: $text-color;
-        font-size: 1.08em;
-        font-weight: 700;
-        line-height: 1.35;
-    }
-
-    .edu-affiliation {
-        margin-top: .15em;
-        color: $gray;
-        font-size: .9em;
-        line-height: 1.55;
-    }
-
-    .edu-degree {
-        color: $text-color;
-        font-weight: 600;
-    }
-
-    .edu-program {
-        color: $info-color;
-        font-weight: 600;
-    }
-
-    .edu-separator {
-        margin: 0 .45em;
-        color: $light-gray;
-    }
-
-    .edu-note {
-        margin-top: .25em;
-        color: $gray;
-        font-size: .9em;
-        line-height: 1.55;
-    }
-
-    .edu-note-label {
-        margin-right: .25em;
-        color: $text-color;
-        font-weight: 600;
-    }
-
-    .edu-facts {
-        display: flex;
-        flex-wrap: wrap;
-        gap: .45em 1.5em;
-        margin-top: .65em;
-        font-size: .9em;
-        line-height: 1.5;
-    }
-
-    .edu-fact-label {
-        margin-right: .45em;
-        color: $gray;
-    }
-
-    .edu-fact-value {
-        color: $text-color;
-        font-weight: 600;
-    }
-
-    @media (max-width: $small) {
-        grid-template-columns: minmax(0, 1fr);
-        padding: 1.25rem 0 1.25rem 1.25rem;
-
-        &:before,
-        &:after {
-            left: 0;
-        }
-
-        &:before,
-        &:first-child:before {
-            top: 1.55rem;
-        }
-
-        &:after {
-            top: 1.55rem;
-        }
-
-        &:last-child {
-            padding-bottom: 0;
-
-            &:before {
-                height: 1.55rem;
-            }
-        }
-
-        .edu-date,
-        .edu-content {
-            grid-column: 1;
-        }
-
-        .edu-date {
-            margin-bottom: .45em;
-            padding-top: 0;
-        }
-    }
+.edu-date {
+    color: $info-color;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .visitor-stats {
