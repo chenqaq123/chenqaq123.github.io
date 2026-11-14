@@ -3,6 +3,7 @@
 import json
 import logging
 import os
+import signal
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -12,6 +13,14 @@ from scholarly._proxy_generator import MaxTriesExceededException
 logging.basicConfig(level=logging.INFO)
 
 
+class ScholarFetchTimeout(BaseException):
+    """The entire fetch exceeded its time budget."""
+
+
+def fetch_timeout(signum, frame):
+    raise ScholarFetchTimeout()
+
+
 def main():
     scholar_id = os.environ.get('GOOGLE_SCHOLAR_ID', '').strip()
     if not scholar_id:
@@ -19,10 +28,13 @@ def main():
 
     scholarly.set_timeout(20)
     scholarly.set_retries(2)
+    # scholarly can retry HTTP 403 forever without consuming its retry count.
+    previous_handler = signal.signal(signal.SIGALRM, fetch_timeout)
+    signal.alarm(180)
     try:
         author = scholarly.search_author_id(scholar_id)
         scholarly.fill(author, sections=['basics', 'indices', 'counts', 'publications'])
-    except MaxTriesExceededException:
+    except (MaxTriesExceededException, ScholarFetchTimeout):
         # No new files or publish output: the last successful snapshot stays intact.
         message = 'Google Scholar could not be reached or blocked this request. Keeping the last successful citation data; the next scheduled run will try again.'
         if os.environ.get('GITHUB_ACTIONS') == 'true':
@@ -33,6 +45,9 @@ def main():
                     stream.write(message + '\n')
             return
         raise
+    finally:
+        signal.alarm(0)
+        signal.signal(signal.SIGALRM, previous_handler)
 
     author['updated'] = datetime.now(timezone.utc).isoformat()
     author['publications'] = {v['author_pub_id']: v for v in author['publications']}
