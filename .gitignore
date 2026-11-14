@@ -8,3 +8,5 @@ vendor/
 .jekyll-metadata
 *.zip
 .codex-preview/
+.venv-scholar/
+google_scholar_crawler/results/
