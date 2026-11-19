@@ -39,6 +39,14 @@ My publications have received in total <a href='https://scholar.google.com/citat
 
 <ul class="pub-list">
   <li class="pub-item">
+    <div class="pub-title">Adaptive Concept Erasure in Diffusion Models via Sparse Steering Vectors <span class="pub-tag">KDD 2027</span></div>
+    <div class="pub-authors"><strong>Guanxu Chen</strong>, Huming Qiu, Mi Zhang, Zhenxing Qian, Yun Xiong, Xiaoyang Wang, Zhibo Zhang, Min Yang</div>
+    <div class="pub-links">
+      <!-- Add the Website link here when available. -->
+      <!-- Add the Paper link here when available. -->
+    </div>
+  </li>
+  <li class="pub-item">
     <div class="pub-title"><a href="https://arxiv.org/abs/2411.10329">Safe Text-to-Image Generation: Simply Sanitize the Prompt Embedding</a> <span class="pub-tag">arXiv 2024</span></div>
     <div class="pub-authors">Huming Qiu, <strong>Guanxu Chen</strong>, Mi Zhang, Xiaohan Zhang, Xiaoyu You, Min Yang</div>
     <div class="pub-links">
@@ -50,16 +58,7 @@ My publications have received in total <a href='https://scholar.google.com/citat
   </li>
 </ul>
 
-# 🚀 Projects
-- To be updated.
-
 # 🎖 Honors and Awards
 
-- **Outstanding Graduate**, Shanghai Municipality
-- **Undergraduate Honors Certificate**, Fudan University
-- **First-Class Scholarship**, Fudan University (× 2)
-- **Gold Award** (Shanghai Division) / **Bronze Award** (National Finals), China International College Students' Innovation Competition
-- **First Prize** (Open-Source Task Challenge Track), 6th CCF Open Source Innovation Competition
-
-# 💬 Invited Talks
-- To be updated.
+- **Shanghai Outstanding Graduate** — Shanghai
+- **Undergraduate Honors Certificate** — Fudan University

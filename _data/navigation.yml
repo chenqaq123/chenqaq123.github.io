@@ -15,11 +15,5 @@ main:
   - title: "Publications"
     url: "/#-publications"
 
-  - title: "Projects"
-    url: "/#-projects"
-
   - title: "Honors and Awards"
     url: "/#-honors-and-awards"
-
-  - title: "Invited Talks"
-    url: "/#-invited-talks"
